@@ -17,7 +17,7 @@ config = {
     'lr': 0.0002,  # Learning rate for optimizers
     'ngpu': 1,  # Number of GPUs available. Use 0 for CPU mode.
     'beta1': 0.5,  # Beta1 hyperparam for Adam optimizers
-    'epochs': 350,
+    'epochs': 100,
     'is_save_model': True,  # Save the trained model or not
 }
 device = torch.device("cuda:0" if (torch.cuda.is_available() and config['ngpu'] > 0) else "cpu")
@@ -140,6 +140,7 @@ if __name__ == '__main__':
                 with torch.no_grad():
                     fake = netG(fixed_noise).detach().cpu()
                 img_list.append(vutils.make_grid(fake, padding=2, normalize=True))
+                utils.plot_comparison(dataloader, img_list)
 
             iters += 1
     print("Training Complete")
@@ -147,7 +148,7 @@ if __name__ == '__main__':
     utils.plot_animation(img_list)
     utils.plot_comparison(dataloader, img_list)
     # random test
-    random_noise = torch.randn(4, config['nz'], 1, 1, device=device)
+    random_noise = torch.randn(16, config['nz'], 1, 1, device=device)
     utils.inference(netG, random_noise)
     if config['is_save_model']:
         print('Saving Model...')
