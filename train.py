@@ -59,7 +59,7 @@ optimizerD = optim.Adam(netD.parameters(), lr=config['lr'], betas=(config['beta1
 optimizerG = optim.Adam(netG.parameters(), lr=config['lr'], betas=(config['beta1'], 0.999))
 
 # Create the dataloader
-dataloader = datasets.load_data('./dogs', config['image_size'], config['batch_size'])
+dataloader = datasets.load_data('./data', config['image_size'], config['batch_size'])
 if __name__ == '__main__':
     # Training Loop
 
