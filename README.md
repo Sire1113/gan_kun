@@ -5,7 +5,7 @@
 
 已上传一个生成蔡徐坤的简单模型，效果如下：
 
-![result](.\result.png)
+![result](result.png)
 
 
 
