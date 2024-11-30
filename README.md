@@ -17,8 +17,8 @@
 
 --root dir
 
-  --train.py
+>--train.py
 
-  --data
+>--data
 
-    --user_datasets
+>>--user_datasets
