@@ -1,4 +1,4 @@
-# gan_yumi
+# gan_kun
 南邮人工智能中的深度学习任选课作业
 
 
@@ -22,3 +22,6 @@
 >--data
 
 >>--user_datasets
+>>>1.jpg
+>>>2.jpg
+>>>...
