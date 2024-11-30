@@ -17,7 +17,7 @@ config = {
     'lr': 0.0002,  # Learning rate for optimizers
     'ngpu': 1,  # Number of GPUs available. Use 0 for CPU mode.
     'beta1': 0.5,  # Beta1 hyperparam for Adam optimizers
-    'epochs': 250,
+    'epochs': 350,
     'is_save_model': True,  # Save the trained model or not
 }
 device = torch.device("cuda:0" if (torch.cuda.is_available() and config['ngpu'] > 0) else "cpu")

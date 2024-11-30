@@ -4,7 +4,7 @@ import matplotlib.animation as animation
 from IPython.display import HTML
 import torchvision.utils as vutils
 import torch
-
+import cv2
 
 def plot_loss(G_losses, D_losses):
     plt.figure(figsize=(10, 5))
@@ -55,3 +55,13 @@ def inference(generator, noise):
         plt.imshow(
             np.transpose(vutils.make_grid(fake_images, padding=5, normalize=True).cpu(), (1, 2, 0)))
         plt.show()
+def inference_scaled(generator, noise):
+    with torch.no_grad():
+        img = generator(noise).detach().cpu().numpy()
+        img = np.squeeze((img + 1) / 2)
+        img = np.transpose(img, (1, 2, 0))
+        img = cv2.cvtColor(img, cv2.COLOR_RGB2BGR)
+        img = cv2.resize(img, (1024, 1024),interpolation=cv2.INTER_CUBIC)
+        cv2.imshow("img", img)
+        cv2.waitKey()
+        cv2.destroyAllWindows()
