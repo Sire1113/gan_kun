@@ -14,11 +14,17 @@ I've uploaded a simple model to generate Cai Xukun, and the effect is like this:
 # 使用说明
 
 将文件全部下载，数据集解压到运行目录，运行run.py即可。
+
 如果需要修改参数，在run.py最上面的config进行修改。
+
 也可以使用自己的数据集，需要和原来格式一样 即：
-Download the entire file, unzip the dataset into the running directory, and run train.py to start training. 
-If you need to modify parameters, make the changes at the top of the train.py file in the config section. 
+
+Download the entire file, unzip the dataset into the running directory, and run run.py to start training. 
+
+If you need to modify parameters, make the changes at the top of the run.py file in the config section. 
+
 You can also use your own dataset, which should be in the same format as the original one, i.e. :
+
 
 --root dir
 
@@ -28,5 +34,7 @@ You can also use your own dataset, which should be in the same format as the ori
 
 >>--user_datasets
 >>>1.jpg
+>>>
 >>>2.jpg
+>>>
 >>>...
